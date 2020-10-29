@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+	<div id="app">
+		<router-view />
+	</div>
 </template>
 
 <script>
 export default {
-  name: "app"
-};
+	name: 'app'
+}
 </script>
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 html,
 body,
 #app {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 ul,
 li {
-  list-style: none;
+	list-style: none;
 }
 </style>
