@@ -23,8 +23,56 @@
 				<img src="" alt="" />
 			</div>
 		</div>
-		<div class="title-one">
+		<div class="title-nav">
 			<img src="../../assets/image/news.png" alt="" />
+		</div>
+		<div class="ope-swipe">
+			<van-swipe class="my-swipe" :autoplay="3000000" indicator-color="white">
+				<van-swipe-item>
+					<div class="img"></div>
+					<div class="info">
+						<div class="content">content</div>
+						<div class="time">2020-12-02</div>
+					</div>
+				</van-swipe-item>
+				<van-swipe-item>
+					<div class="img"></div>
+					<div class="info">
+						<div class="content">content</div>
+						<div class="time">2020-12-02</div>
+					</div>
+				</van-swipe-item>
+				<van-swipe-item>
+					<div class="img"></div>
+					<div class="info">
+						<div class="content">content</div>
+						<div class="time">2020-12-02</div>
+					</div>
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<div class="title-nav">
+			<img src="../../assets/image/news.png" alt="" />
+		</div>
+		<div class="recommend-img">
+			<img src="../../assets/image/home1.png" alt="" />
+		</div>
+		<div class="recommend">
+			金山景区是开江县重点推进打造的“AAAA”级景区。景区紧邻开江县城，位于开江县普安镇境内，规划总面积300.56公顷，总体布局为：二区、一带、一中心。即金山寺佛教文化区、旅游农业休闲观光区、金山森林休闲度假带、映月湖休闲娱乐中心。
+			目前，金山景区基本建成了集自然景观与人文景观于一体的文化景区，实现了生态湿地保护、幸福美丽新村、乡村文化旅游的有机统
+		</div>
+		<div class="video-ope">
+			<video src="" controls="controls"></video>
+		</div>
+		<div class="ink-img">
+			<img src="../../assets/image/home2.png" alt="" />
+		</div>
+		<div class="title-nav">
+			<img src="../../assets/image/news.png" alt="" />
+		</div>
+		<div class="basic-info"></div>
+		<div class="ink2-img">
+			<img src="../../assets/image/home3.png" alt="" />
 		</div>
 	</div>
 </template>
@@ -38,7 +86,7 @@ export default {
 .home {
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow: auto;
 	.home-img {
 		height: 438px;
 		display: flex;
@@ -67,12 +115,107 @@ export default {
 			}
 		}
 	}
-	.title-one {
+	.title-nav {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-top: 30px;
 		img {
 		}
+	}
+	.ope-swipe {
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		background: #ffffff;
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);
+		border-radius: 8px;
+		margin-top: 30px;
+		overflow: hidden;
+		.img {
+			height: 250px;
+			background: red;
+		}
+		.info {
+			height: 90px;
+			padding: 15px;
+			.content {
+				height: 24px;
+				line-height: 24px;
+				font-size: 32px;
+				font-weight: 400;
+				color: #707070;
+				padding-top: 10px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.time {
+				font-size: 32px;
+				font-weight: 400;
+				color: #707070;
+				padding-top: 13px;
+			}
+		}
+	}
+	.recommend-img {
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		height: 212px;
+		margin-top: 30px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.recommend {
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		font-size: 24px;
+		font-family: 微软简楷体;
+		color: #333333;
+		margin-top: 30px;
+		line-height: 32px;
+	}
+	.video-ope {
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		height: 406px;
+		margin-top: 30px;
+		border-radius: 8px;
+		overflow: hidden;
+		video {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.ink-img {
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		height: 168px;
+		margin-top: 20px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.ink2-img {
+		width: calc(100% - 40px);
+		margin-left: 20px;
+		height: 220px;
+		margin-top: 20px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.basic-info {
+		width: calc(100% - 40px);
+		margin: 50px 20px 0 20px;
+		height: 400px;
+		background: red;
 	}
 }
 </style>

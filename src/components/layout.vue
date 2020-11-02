@@ -46,7 +46,7 @@ export default {
 	}
 	.content {
 		width: 100%;
-		height: calc(100% - 150px);
+		height: calc(100% - 200px);
 	}
 	.footer {
 		position: absolute;
