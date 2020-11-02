@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 import 'lib-flexible'
 import './plugins/full-import'
+// import Vant from 'vant'
+// import 'vant/lib/index.css'
+// Vue.use(Vant)
 
 Vue.config.productionTip = false
 
