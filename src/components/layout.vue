@@ -1,7 +1,7 @@
 <template>
 	<div class="layout">
 		<div class="header">
-			<van-nav-bar title="标题" left-arrow />
+			<van-nav-bar title="标题" :left-arrow="false" />
 		</div>
 		<div class="content">
 			<router-view />
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-	name: 'loayout',
+	name: 'layout',
 	data() {
 		return {
 			active: 1
@@ -32,14 +32,14 @@ export default {
 	width: 100%;
 	height: 100%;
 	.header {
-		height: 60px;
+		height: 120px;
 		.van-nav-bar {
-			height: 60px;
+			height: 120px;
 			.van-nav-bar__arrow {
-				font-size: 32px;
+				font-size: 40px;
 			}
 			.van-nav-bar__title {
-				font-size: 32px;
+				font-size: 40px;
 				color: #707070;
 			}
 		}
