@@ -1,7 +1,7 @@
 <template>
 	<div class="layout">
 		<div class="header">
-			<van-nav-bar title="标题" :left-arrow="false" />
+			<nav-title title="开江官网" :showNav="false" />
 		</div>
 		<div class="content">
 			<router-view />
@@ -19,6 +19,10 @@
 <script>
 export default {
 	name: 'layout',
+
+	components: {
+		navTitle: () => import('../components/nav-title')
+	},
 	data() {
 		return {
 			active: 1

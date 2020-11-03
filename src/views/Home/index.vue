@@ -116,12 +116,11 @@ export default {
 		}
 	}
 	.title-nav {
+		height: 100px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin-top: 30px;
-		img {
-		}
 	}
 	.ope-swipe {
 		width: calc(100% - 40px);
@@ -171,11 +170,13 @@ export default {
 	.recommend {
 		width: calc(100% - 40px);
 		margin-left: 20px;
-		font-size: 24px;
-		font-family: 微软简楷体;
-		color: #333333;
 		margin-top: 30px;
-		line-height: 32px;
+		font-size: 0.32rem;
+		font-family: 微软简楷体;
+		font-weight: 400;
+		line-height: 0.56rem;
+		color: #333333;
+		text-indent: 0.33333rem;
 	}
 	.video-ope {
 		width: calc(100% - 40px);

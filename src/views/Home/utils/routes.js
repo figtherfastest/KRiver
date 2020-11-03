@@ -10,6 +10,21 @@ const homeRoutes = [
 				component: () => import('../index')
 			}
 		]
+	},
+	{
+		path: '/glamour',
+		name: 'glamour',
+		component: () => import('../glamour')
+	},
+	{
+		path: '/cultural',
+		name: 'cultural',
+		component: () => import('../cultural')
+	},
+	{
+		path: '/play',
+		name: 'play',
+		component: () => import('../play')
 	}
 ]
 export default homeRoutes
