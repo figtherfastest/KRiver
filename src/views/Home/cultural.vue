@@ -5,7 +5,7 @@
 			<img src="../../assets/image/cultural1.png" alt="" />
 		</div>
 		<div class="title-nav">
-			<img src="../../assets/image/jingqugaikuang.png" alt="" />
+			<img src="../../assets/image/title-lishiyuanyuan.png" alt="" />
 		</div>
 		<div class="cultural-info">
 			金山景区位于有“巴山平原、毓秀水乡”之美誉的开江境内，历史悠久，文化传承深厚。
@@ -18,26 +18,32 @@
 			<img src="../../assets/image/cultural3.png" alt="" />
 		</div>
 		<div class="title-nav">
-			<img src="../../assets/image/jingqugaikuang.png" alt="" />
+			<img src="../../assets/image/title-hongsechuancheng.png" alt="" />
 		</div>
 		<div class="ope-swipe">
 			<van-swipe class="my-swipe" :autoplay="3000000" indicator-color="white">
 				<van-swipe-item>
-					<div class="img"></div>
+					<div class="img">
+						<img src="../../assets/image/taohua.png" alt="" />
+					</div>
 					<div class="info">
 						<div class="content">content</div>
 						<div class="time">2020-12-02</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
-					<div class="img"></div>
+					<div class="img">
+						<img src="../../assets/image/taohua.png" alt="" />
+					</div>
 					<div class="info">
 						<div class="content">content</div>
 						<div class="time">2020-12-02</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
-					<div class="img"></div>
+					<div class="img">
+						<img src="../../assets/image/taohua.png" alt="" />
+					</div>
 					<div class="info">
 						<div class="content">content</div>
 						<div class="time">2020-12-02</div>
@@ -68,8 +74,9 @@
 			开江豆笋传统制作技艺产生并流传于四川省达州市开江县的新宁镇、普安镇和甘棠镇，是一种独特的传统手工制作技艺，源于清朝初年的“湖广填四川”时期。
 			开江豆笋是开江农耕文化文明进程的证物，2008年被...
 		</div>
+
 		<div class="footer-nav">
-			<img src="../../assets/image/cultural7.png" alt="" />
+			<div class="look-more" @click="lookMore"></div>
 		</div>
 	</div>
 </template>
@@ -79,6 +86,11 @@ export default {
 	name: 'cultural',
 	components: {
 		navTitle: () => import('../../components/nav-title')
+	},
+	methods: {
+		lookMore() {
+			this.$router.push({ name: 'moreCultural' })
+		}
 	}
 }
 </script>
@@ -145,7 +157,11 @@ export default {
 		overflow: hidden;
 		.img {
 			height: 250px;
-			background: red;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 		.info {
 			height: 90px;
@@ -194,10 +210,15 @@ export default {
 	}
 	.footer-nav {
 		height: 382px;
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+		padding-top: 180px;
+		background: url('../../assets/image/cultural7.png') no-repeat;
+		background-size: 100% 100%;
+		.look-more {
+			width: 424px;
+			height: 78px;
+			background: url('../../assets/image/title-lookmore.png') no-repeat;
+			background-size: 100% 100%;
+			margin: 0 auto;
 		}
 	}
 }

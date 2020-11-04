@@ -32,6 +32,7 @@ export default {
 	font-family: PingFang SC;
 	font-weight: 400;
 	color: #707070;
+	position: relative;
 	.iconfont {
 		position: absolute;
 		left: 20px;

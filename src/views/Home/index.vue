@@ -4,23 +4,23 @@
 			<img src="../../assets/image/index-avatar.png" alt="" />
 		</div>
 		<div class="tab-wrap">
-			<div class="tab">
-				<img src="" alt="" />
+			<div class="tab" @click="goGalary">
+				<img src="../../assets/image/index-meilijinshan.png" alt="" />
+			</div>
+			<div class="tab" @click="goCultural">
+				<img src="../../assets/image/index-chuantongwenhua.png" alt="" />
+			</div>
+			<div class="tab" @click="goPlay">
+				<img src="../../assets/image/index-youwanzhinan.png" alt="" />
 			</div>
 			<div class="tab">
-				<img src="" alt="" />
+				<img src="../../assets/image/index-jingquzhengwu.png" alt="" />
 			</div>
 			<div class="tab">
-				<img src="" alt="" />
+				<img src="../../assets/image/index-chuxingjinnang.png" alt="" />
 			</div>
 			<div class="tab">
-				<img src="" alt="" />
-			</div>
-			<div class="tab">
-				<img src="" alt="" />
-			</div>
-			<div class="tab">
-				<img src="" alt="" />
+				<img src="../../assets/image/index-quanjingjinshan.png" alt="" />
 			</div>
 		</div>
 		<div class="title-nav">
@@ -29,30 +29,42 @@
 		<div class="ope-swipe">
 			<van-swipe class="my-swipe" :autoplay="3000000" indicator-color="white">
 				<van-swipe-item>
-					<div class="img"></div>
+					<div class="img">
+						<img src="../../assets/image/taohua.png" alt="" />
+					</div>
 					<div class="info">
-						<div class="content">content</div>
+						<div class="content">
+							77
+						</div>
 						<div class="time">2020-12-02</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
-					<div class="img"></div>
+					<div class="img">
+						<img src="../../assets/image/taohua.png" alt="" />
+					</div>
 					<div class="info">
-						<div class="content">content</div>
+						<div class="content">
+							66
+						</div>
 						<div class="time">2020-12-02</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
-					<div class="img"></div>
+					<div class="img">
+						<img src="../../assets/image/taohua.png" alt="" />
+					</div>
 					<div class="info">
-						<div class="content">content</div>
+						<div class="content">
+							content
+						</div>
 						<div class="time">2020-12-02</div>
 					</div>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
 		<div class="title-nav">
-			<img src="../../assets/image/news.png" alt="" />
+			<img src="../../assets/image/title-jingqugaikuang.png" alt="" />
 		</div>
 		<div class="recommend-img">
 			<img src="../../assets/image/home1.png" alt="" />
@@ -62,15 +74,15 @@
 			目前，金山景区基本建成了集自然景观与人文景观于一体的文化景区，实现了生态湿地保护、幸福美丽新村、乡村文化旅游的有机统
 		</div>
 		<div class="video-ope">
-			<video src="" controls="controls"></video>
+			<!--			<video src="" controls="controls"></video>-->
 		</div>
 		<div class="ink-img">
 			<img src="../../assets/image/home2.png" alt="" />
 		</div>
 		<div class="title-nav">
-			<img src="../../assets/image/news.png" alt="" />
+			<img src="../../assets/image/title-chuxingjingnang.png" alt="" />
 		</div>
-		<div class="basic-info"></div>
+		<sige></sige>
 		<div class="ink2-img">
 			<img src="../../assets/image/home3.png" alt="" />
 		</div>
@@ -79,7 +91,21 @@
 
 <script>
 export default {
-	name: 'Home'
+	name: 'Home',
+	components: {
+		sige: () => import('../../components/sige')
+	},
+	methods: {
+		goGalary() {
+			this.$router.push({ path: '/glamour' })
+		},
+		goCultural() {
+			this.$router.push({ path: '/cultural' })
+		},
+		goPlay() {
+			this.$router.push({ path: '/play' })
+		}
+	}
 }
 </script>
 <style lang="less">
@@ -106,7 +132,6 @@ export default {
 		.tab {
 			width: 190px;
 			height: 72px;
-			border: 1px solid red;
 			box-sizing: border-box;
 			margin-right: 48px;
 			margin-bottom: 40px;
@@ -130,9 +155,14 @@ export default {
 		border-radius: 8px;
 		margin-top: 30px;
 		overflow: hidden;
+		margin-bottom: 50px;
 		.img {
 			height: 250px;
-			background: red;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 		.info {
 			height: 90px;
@@ -185,6 +215,8 @@ export default {
 		margin-top: 30px;
 		border-radius: 8px;
 		overflow: hidden;
+		background: url('../../assets/image/meinv.png') no-repeat;
+		background-size: 100% 100%;
 		video {
 			width: 100%;
 			height: 100%;
@@ -194,7 +226,7 @@ export default {
 		width: calc(100% - 40px);
 		margin-left: 20px;
 		height: 168px;
-		margin-top: 20px;
+		margin-top: -20px;
 		img {
 			width: 100%;
 			height: 100%;
