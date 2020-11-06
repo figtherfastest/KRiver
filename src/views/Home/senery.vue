@@ -5,9 +5,15 @@
 			<img src="../../assets/image/senery1.png" alt="" />
 		</div>
 		<div class="tabs">
-			<div class="bars">景区公告</div>
-			<div class="bars">景区活动</div>
-			<div class="bars">新闻动态</div>
+			<div class="bars">
+				<img src="../../assets/image/heng-jingqugonggao.png" alt="" />
+			</div>
+			<div class="bars">
+				<img src="../../assets/image/heng-jingquhuodong-white.png" alt="" />
+			</div>
+			<div class="bars">
+				<img src="../../assets/image/heng-xinwendongtai-white.png" alt="" />
+			</div>
 		</div>
 		<div class="news-wrap">
 			<div class="news">
@@ -51,7 +57,7 @@
 				</div>
 			</div>
 		</div>
-		<footer-nav></footer-nav>
+		<footer-nav style="margin-top: -100px"></footer-nav>
 	</div>
 </template>
 
@@ -88,7 +94,10 @@ export default {
 		.bars {
 			width: 206px;
 			height: 54px;
-			border: 1px solid red;
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 	.news-wrap {

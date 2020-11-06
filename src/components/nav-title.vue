@@ -1,7 +1,7 @@
 <template>
 	<div class="nav-title">
 		{{ title }}
-		<i class="iconfont iconzuojiantou" v-show="showNav"></i>
+		<i class="iconfont iconzuojiantou" v-show="showNav" @click="goBack"></i>
 	</div>
 </template>
 
@@ -16,6 +16,12 @@ export default {
 		showNav: {
 			type: Boolean,
 			default: true
+		}
+	},
+
+	methods: {
+		goBack() {
+			this.$router.back()
 		}
 	}
 }

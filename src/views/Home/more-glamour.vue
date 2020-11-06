@@ -8,13 +8,26 @@
 			<img src="../../assets/image/title-ziranjingdian.png" alt="" />
 		</div>
 		<div class="tabs">
-			<div class="tab"></div>
-			<div class="tab"></div>
-			<div class="tab"></div>
-			<div class="tab"></div>
-			<div class="tab"></div>
-			<div class="tab"></div>
+			<div class="tab">
+				<img src="../../assets/image/heng-baoshihu.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-feitianwenquan.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-huangjinhuahai.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-emeishan.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-mingyuehu.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-lianhuashijie.png" alt="" />
+			</div>
 		</div>
+		<footer-nav style="margin-top: -120px"></footer-nav>
 		<div class="title-nav">
 			<img src="../../assets/image/title-renwenjingguan.png" alt="" />
 		</div>
@@ -78,7 +91,10 @@ export default {
 			width: 420px;
 			height: 78px;
 			margin: 60px auto 0;
-			border: 1px solid red;
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 	.circle-wrap {

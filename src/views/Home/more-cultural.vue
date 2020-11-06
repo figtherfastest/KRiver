@@ -8,12 +8,30 @@
 			<img src="../../assets/image/title-minghjianbiaoyanh.png" alt="" />
 		</div>
 		<div class="tabs">
-			<div class="tab"></div>
-			<div class="tab"></div>
-			<div class="tab"></div>
-			<div class="tab"></div>
-			<div class="tab"></div>
-			<div class="tab"></div>
+			<div class="tab">
+				<img src="../../assets/image/heng-kaijiangaobang.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-haoyangge-white.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-wulongdeng-white.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-shuizunaochong-white.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-kaijiangjinqianban-white.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-kaijiangpange-white.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-shigonghaozi-white.png" alt="" />
+			</div>
+			<div class="tab">
+				<img src="../../assets/image/heng-kaijiangqingge-white.png" alt="" />
+			</div>
 		</div>
 		<footerNav class="nav"></footerNav>
 		<div class="title-nav">
@@ -61,7 +79,10 @@ export default {
 			width: 420px;
 			height: 78px;
 			margin: 60px auto 0;
-			border: 1px solid red;
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 	.nav {

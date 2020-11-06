@@ -2,6 +2,7 @@
 	<div class="home">
 		<div class="home-img">
 			<img src="../../assets/image/index-avatar.png" alt="" />
+			<van-notice-bar class="notic" left-icon="volume-o" color="#C0A85A" background="none" :text="noticText" />
 		</div>
 		<div class="tab-wrap">
 			<div class="tab" @click="goGalary">
@@ -13,13 +14,13 @@
 			<div class="tab" @click="goPlay">
 				<img src="../../assets/image/index-youwanzhinan.png" alt="" />
 			</div>
-			<div class="tab">
+			<div class="tab" @click="goSenery">
 				<img src="../../assets/image/index-jingquzhengwu.png" alt="" />
 			</div>
-			<div class="tab">
+			<div class="tab" @click="goTraval">
 				<img src="../../assets/image/index-chuxingjinnang.png" alt="" />
 			</div>
-			<div class="tab">
+			<div class="tab" @click="go720">
 				<img src="../../assets/image/index-quanjingjinshan.png" alt="" />
 			</div>
 		</div>
@@ -92,10 +93,23 @@
 <script>
 export default {
 	name: 'Home',
+	data() {
+		return {
+			noticText: ''
+		}
+	},
+	created() {
+		this.getNotic()
+	},
 	components: {
 		sige: () => import('../../components/sige')
 	},
 	methods: {
+		getNotic() {
+			this.$get('http://47.106.212.101:8080/webend/notice/last/notice').then(res => {
+				this.noticText = res.data.noticeContent
+			})
+		},
 		goGalary() {
 			this.$router.push({ path: '/glamour' })
 		},
@@ -104,7 +118,17 @@ export default {
 		},
 		goPlay() {
 			this.$router.push({ path: '/play' })
+		},
+		goSenery() {
+			this.$router.push({ path: '/senery' })
+		},
+		goTraval() {
+			this.$router.push({ path: '/traval' })
+		},
+		go720() {
+			window.location.href = 'https://360.at720.com/200710/?sid=m200710_0830&from=singlemessage'
 		}
+		//
 	}
 }
 </script>
@@ -119,9 +143,16 @@ export default {
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
+		position: relative;
 		img {
 			width: 100%;
 			object-fit: cover;
+		}
+		.notic {
+			width: 670px;
+			position: absolute;
+			top: 20px;
+			left: 20px;
 		}
 	}
 	.tab-wrap {

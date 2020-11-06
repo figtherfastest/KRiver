@@ -5,7 +5,7 @@
 			<img src="../../assets/image/traval2.png" alt="" />
 		</div>
 		<div class="title-nav">
-			<img src="../../assets/image/jingqugaikuang.png" alt="" />
+			<img src="../../assets/image/xianlutuijian.png" alt="" />
 		</div>
 		<div class="info-do">
 			<div class="do-list">由省道202梁平到开江两日游</div>
@@ -13,8 +13,9 @@
 			<div class="do-list">由省道202梁平到开江两日游</div>
 		</div>
 		<div class="title-nav">
-			<img src="../../assets/image/jingqugaikuang.png" alt="" />
+			<img src="../../assets/image/title-jiaotonggonglve.png" alt="" />
 		</div>
+		<footer-nav style="margin-top: -180px"></footer-nav>
 		<div class="history">
 			<img src="../../assets/image/traval1.png" alt="" />
 		</div>
@@ -53,7 +54,7 @@
 			<footer-nav></footer-nav>
 		</div>
 		<div class="title-nav">
-			<img src="../../assets/image/jingqugaikuang.png" alt="" />
+			<img src="../../assets/image/title-chuxingfuwu.png" alt="" />
 		</div>
 		<sige />
 		<div class="foot-img"></div>
@@ -87,11 +88,14 @@ export default {
 		}
 	}
 	.title-nav {
-		height: 100px;
-		margin-top: 30px;
+		height: 170px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 	.info-do {
 		width: calc(100% - 72px);
@@ -115,6 +119,9 @@ export default {
 		height: 784px;
 		margin-left: 68px;
 		margin-top: 20px;
+		padding: 12px;
+		border: 4px solid #c0a85a;
+		box-sizing: border-box;
 		img {
 			width: 100%;
 			height: 100%;
@@ -133,7 +140,7 @@ export default {
 		}
 		.state {
 			font-size: 24px;
-			line-height: 32px;
+			line-height: 40px;
 			font-family: 微软简楷体;
 			font-weight: 400;
 			color: #1e1e1e;
