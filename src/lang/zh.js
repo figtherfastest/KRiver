@@ -1,5 +1,17 @@
-export default {
-	bottomBar: {
-		text: '测试首页'
-	}
+export const lang = {
+	homeinfo:
+		'Jinshan Mountain scenic spot is a "AAAA" level scenic spot that Kaijiang County attaches great importance on. The scenic spot is close to Kaijiang County, located in Pu\'an Town, Kaijiang County, with a total planning area of 300.56 hectares. The overall layout is: two zones, one belt and one center. That is, Jinshan Temple Buddhist Culture zone, Tourism-agriculture-leisure-sightseeing zone, Jinshan Forest Leisure and Holiday Belt, Yingyue Lake Leisure and Entertainment center.\n' +
+		'At present, Jinshan Mountain scenic spot has basically built a cultural scenic area integrating natural landscape and cultural landscape, realizing the organic unity of ecological wetland protection, happy and beautiful new village and rural cultural tourism.',
+	traditionTitle:
+		'Jinshan scenic spot is located in Kaijiang, which is known as "Plain in Bashan Mountain and Water Town Cultivating Talents". It has a long history and profound cultural heritage.\n' +
+		'Jinshan Temple was built in the Tianbao period of Tang Dynasty. It is called Jialan temple in ancient times. It has an spacious and bright temple and a collection of cultural relics, which is worthy of the name of the First Ancient Temple in East Sichuan. The seven-level brick pagoda Baoquan pagoda, built in Ming Dynasty, has a high architectural cultural value and is a scenic spot of high view. The "Baoquan Moon Night" is one of the eight sceneries of Kaijiang. The scenery of Bashan small plain between Jinshan Temple and Baibao Pagoda is connected by villages. Now hundred-hector "Lotus World" is even more famous; the site of the Red Army\'s anti encirclement and suppression operations in Baotashan has added heavy historical accumulation to this land.',
+	traditionInfo1:
+		'aijiang Aobang refers to a unique folk performance produced and spread in Xinning town and Pu\'an town of Kaijiang County. Its rudimentary form is a kind of amusing game in which people use two bars which are used to carry stones to "cross" each other and make one person sit on the bars being raised and lowered when they are resting and working. At the end of the Qing Dynasty, it evolved into a form of folk cultural performance that mocks corrupt officials to please the people.\n' +
+		"In March 2007, Aobang was included in the first batch of Provincial Intangible Heritage Protection List by Sichuan Provincial People's government.",
+	traditionInfo2:
+		'Kaijiang Haoyang Songs refers to a kind of labor folk song produced and spread in the whole area of Kaijiang, also known as the folk song of mountains and fields. It is a kind of folk song form in which the working people of Kaijiang express their inner feelings freely in the face of nature when they are engaged in specific labor, i.e. loosening the soil, also known as the Field Weeding Song.\n' +
+		"In March 2007, Haoyangge was included in the first batch of Provincial Intangible Heritage Protection List by Sichuan Provincial People's government.",
+	traditionInfo3:
+		"Kaijiang Dousun’s (Dried Beancurd Shoot) traditional craftsmanship came into being and spread in Xinning Town, Pu'an town and Gantang town of Kaijiang County, Dazhou City, Sichuan Province. It is a unique traditional craftsmanship, which originated in the early Qing Dynasty.\n" +
+		"Kaijiang Dousun (Dried Beancurd Shoot) is the evidence of the process of agricultural civilization in Kaijiang. It was listed as the Intangible Cultural Heritage Protection Project by Dazhou Cultural Bureau in 2008 and the third batch of Intangible Cultural Heritage Protection Projects by Sichuan Provincial People's Government in May 2009."
 }

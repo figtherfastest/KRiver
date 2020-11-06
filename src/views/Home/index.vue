@@ -71,12 +71,9 @@
 			<img src="../../assets/image/home1.png" alt="" />
 		</div>
 		<div class="recommend">
-			金山景区是开江县重点推进打造的“AAAA”级景区。景区紧邻开江县城，位于开江县普安镇境内，规划总面积300.56公顷，总体布局为：二区、一带、一中心。即金山寺佛教文化区、旅游农业休闲观光区、金山森林休闲度假带、映月湖休闲娱乐中心。
-			目前，金山景区基本建成了集自然景观与人文景观于一体的文化景区，实现了生态湿地保护、幸福美丽新村、乡村文化旅游的有机统
+			{{ $t('lang.homeinfo') }}
 		</div>
-		<div class="video-ope">
-			<!--			<video src="" controls="controls"></video>-->
-		</div>
+		<div class="video-ope"></div>
 		<div class="ink-img">
 			<img src="../../assets/image/home2.png" alt="" />
 		</div>

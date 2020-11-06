@@ -8,8 +8,7 @@
 			<img src="../../assets/image/title-lishiyuanyuan.png" alt="" />
 		</div>
 		<div class="cultural-info">
-			金山景区位于有“巴山平原、毓秀水乡”之美誉的开江境内，历史悠久，文化传承深厚。
-			金山寺始建于唐代天宝年间，古时名为伽兰寺，其殿宇轩敞、文物荟萃，无愧川东第一古刹之名；建于明代的七级楼阁式砖塔宝泉塔，具有极高的建筑文化价值，是登高观景点，"宝泉月夜"是开江八景之一；金山寺与白宝塔之间的巴山小平原风光，村落相连，如诗如画，如今万亩“莲花世界”更是闻名遐迩;宝塔山红军反围剿作战遗址更为这片土地增添了厚重的历史积淀。
+			{{ $t('lang.traditionTitle') }}
 		</div>
 		<div class="cultural-img1">
 			<img src="../../assets/image/cultural2.png" alt="" />
@@ -58,21 +57,19 @@
 			<img src="../../assets/image/cultural4.png" alt="" />
 		</div>
 		<div class="circle-info">
-			开江拗棒指产生并流传于开江县新宁镇和普安镇的独具特色的一种民间表演。开江拗棒的雏形是人们在劳动歇憩时，用抬石头的两根杠棒“十”字相架，让一人坐于棒上，被伙伴们拗上拗下的一种喜乐逗趣的游戏。清末演变为嘲讽贪官污��取悦民众...
+			{{ $t('lang.traditionInfo1') }}
 		</div>
 		<div class="circle">
 			<img src="../../assets/image/cultural5.png" alt="" />
 		</div>
 		<div class="circle-info">
-			开江薅秧歌指产生并流传于开江全境的一种劳动山歌，又称山野之歌，是开江劳动人民在从事特定的劳动——薅秧时，面对大自然，即兴自由地抒发内心感情的一种民歌体裁形式，又叫大田薅秧歌。
-			2007年3月，薅秧歌已被...
+			{{ $t('lang.traditionInfo2') }}
 		</div>
 		<div class="circle">
 			<img src="../../assets/image/cultural6.png" alt="" />
 		</div>
 		<div class="circle-info">
-			开江豆笋传统制作技艺产生并流传于四川省达州市开江县的新宁镇、普安镇和甘棠镇，是一种独特的传统手工制作技艺，源于清朝初年的“湖广填四川”时期。
-			开江豆笋是开江农耕文化文明进程的证物，2008年被...
+			{{ $t('lang.traditionInfo3') }}
 		</div>
 
 		<div class="footer-nav">
