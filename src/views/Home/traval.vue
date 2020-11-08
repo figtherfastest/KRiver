@@ -7,11 +7,11 @@
 			<img src="../../assets/image/xianlutuijian.png" alt="" />
 		</div>
 		<div class="info-do">
-			<div class="do-list">{{ $t('lang.travalState1') }}</div>
-			<div class="do-list">{{ $t('lang.travalState2') }}</div>
-			<div class="do-list">{{ $t('lang.travalState3') }}</div>
-			<div class="do-list">{{ $t('lang.travalState4') }}</div>
-			<div class="do-list">{{ $t('lang.travalState5') }}</div>
+			<div class="do-list" v-html="$t('lang.travalState1')"></div>
+			<div class="do-list" v-html="$t('lang.travalState2')"></div>
+			<div class="do-list" v-html="$t('lang.travalState3')"></div>
+			<div class="do-list" v-html="$t('lang.travalState4')"></div>
+			<div class="do-list" v-html="$t('lang.travalState5')"></div>
 		</div>
 		<div class="title-nav">
 			<img src="../../assets/image/title-jiaotonggonglve.png" alt="" />

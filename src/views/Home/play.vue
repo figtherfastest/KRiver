@@ -310,7 +310,7 @@ export default {
 			width: 424px;
 			height: 78px;
 			margin: 0 auto;
-			background: url('../../assets/image/title-lookmore.png');
+			background: url('../../assets/image/title-lookmore-white.png');
 		}
 	}
 	.sheet-img {

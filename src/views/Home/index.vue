@@ -28,16 +28,17 @@
 			<img src="../../assets/image/news.png" alt="" />
 		</div>
 		<div class="ope-swipe">
-			<van-swipe class="my-swipe" :autoplay="3000000" indicator-color="white" :width="350">
+			<van-swipe class="my-swipe" :autoplay="3000000" indicator-color="white">
 				<van-swipe-item>
 					<div class="img">
 						<img src="../../assets/image/taohua.png" alt="" />
 					</div>
 					<div class="info">
-						<div class="content">
-							77
+						<div class="content">特色餐饮！开江品牌！荷花节吃这个“味道”！</div>
+						<div class="time">
+							为切实保障开江县第七届荷花节及小龙虾节顺利召开，打造开江本地特色餐饮品牌文化，提升烹调专业从业人员的综合素质及职业技能
 						</div>
-						<div class="time">2020-12-02</div>
+						<div class="tel">2020年6月18日</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
@@ -45,10 +46,11 @@
 						<img src="../../assets/image/taohua.png" alt="" />
 					</div>
 					<div class="info">
-						<div class="content">
-							66
+						<div class="content">全省亮点！未来开江“稻田+”产业将成全国各地游客休闲好去处</div>
+						<div class="time">
+							6月的巴渠大地，绿意盎然，步步美景。位于开江县任市镇竹溪村的“稻田＋”现代农业园区，占地面积3000余亩
 						</div>
-						<div class="time">2020-12-02</div>
+						<div class="tel">2020年6月22日</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
@@ -56,10 +58,11 @@
 						<img src="../../assets/image/taohua.png" alt="" />
 					</div>
 					<div class="info">
-						<div class="content">
-							content
+						<div class="content">开江县金山景区招聘劳务派遣人员笔试成绩单</div>
+						<div class="time">
+							根据《开江县金山景区公开招聘公告》规定和工作安排，现将公开考试招聘劳务派遣人员总成绩及排名情况和体检工作有关事项通告如下
 						</div>
-						<div class="time">2020-12-02</div>
+						<div class="tel">2020年6月17日</div>
 					</div>
 				</van-swipe-item>
 			</van-swipe>
@@ -70,9 +73,7 @@
 		<div class="recommend-img">
 			<img src="../../assets/image/home1.png" alt="" />
 		</div>
-		<div class="recommend">
-			{{ $t('lang.homeinfo') }}
-		</div>
+		<div class="recommend" v-html="$t('lang.homeinfo')"></div>
 		<div class="video-ope"></div>
 		<div class="ink-img">
 			<img src="../../assets/image/home2.png" alt="" />
@@ -90,7 +91,7 @@
 			:prevState="false"
 			nextText="关闭"
 			:actionTitle="actionSheetTitle"
-			@handlePrev="handlePrev"
+			@handleNext="handleNext"
 		>
 			<div class="index-sheet-content" v-html="actionContent"></div>
 		</action-sheet>
@@ -155,7 +156,7 @@ export default {
 				this.actionContent = this.$t('lang.luyougongluo')
 			}
 		},
-		handlePrev() {
+		handleNext() {
 			this.actionSheetState = false
 		}
 	}
@@ -229,12 +230,12 @@ export default {
 			}
 		}
 		.info {
-			height: 90px;
 			padding: 15px;
+			//width: calc(100% - 20px);
+			//margin-left: 10px;
 			.content {
-				height: 24px;
-				line-height: 24px;
 				font-size: 32px;
+				line-height: 24px;
 				font-weight: 400;
 				color: #707070;
 				padding-top: 10px;
@@ -243,10 +244,21 @@ export default {
 				white-space: nowrap;
 			}
 			.time {
-				font-size: 32px;
+				font-size: 28px;
 				font-weight: 400;
 				color: #707070;
-				padding-top: 13px;
+				margin-top: 15px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.tel {
+				font-size: 28px;
+				font-weight: 400;
+				color: #707070;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 		}
 	}

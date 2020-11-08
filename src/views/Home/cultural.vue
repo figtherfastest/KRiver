@@ -7,9 +7,7 @@
 		<div class="title-nav">
 			<img src="../../assets/image/title-lishiyuanyuan.png" alt="" />
 		</div>
-		<div class="cultural-info">
-			{{ $t('lang.traditionTitle') }}
-		</div>
+		<div class="cultural-info" v-html="$t('lang.traditionTitle')"></div>
 		<div class="cultural-img1">
 			<img src="../../assets/image/cultural2.png" alt="" />
 		</div>
@@ -26,8 +24,9 @@
 						<img src="../../assets/image/taohua.png" alt="" />
 					</div>
 					<div class="info">
-						<div class="content">content</div>
-						<div class="time">2020-12-02</div>
+						<div class="content">
+							开江是一块红色故土，自1926年泸顺起义军到开江以来，党的活动延绵不断，是川东红军游击队活动的主要区域，川东地下党指挥中心。1933年10月红四方面军率部在开江县的普安、回龙、宝塔、长田、天师、骑龙、永兴、灵岩、新太等地与敌激战7昼夜（红四方面军反六路围攻序幕战，又名红军宝塔坝战役），占领开江1/3的土地，将开江正式划归川陕革命根据地区域，开江因此成为川陕革命根据地的重要组成部分之一。
+						</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
@@ -35,17 +34,10 @@
 						<img src="../../assets/image/taohua.png" alt="" />
 					</div>
 					<div class="info">
-						<div class="content">content</div>
-						<div class="time">2020-12-02</div>
-					</div>
-				</van-swipe-item>
-				<van-swipe-item>
-					<div class="img">
-						<img src="../../assets/image/taohua.png" alt="" />
-					</div>
-					<div class="info">
-						<div class="content">content</div>
-						<div class="time">2020-12-02</div>
+						<div class="content">
+							开江县红色陈列馆是开江县博物馆重要组成部分，是开江县青少年爱国主义教育基地，由王平夷故居改建而成。红色陈列馆共设11个展厅，分别为：第一部分:红色沃土4个展厅，第二部分：宝塔坝战役1个展厅，
+							第三部分：宝塔人家1个展厅， 第四部分：英雄儿女5个展厅，充分发挥红色陈列馆社会教育功能。
+						</div>
 					</div>
 				</van-swipe-item>
 			</van-swipe>
@@ -56,21 +48,15 @@
 		<div class="circle" style="margin-top: 70px">
 			<img src="../../assets/image/cultural4.png" alt="" />
 		</div>
-		<div class="circle-info">
-			{{ $t('lang.traditionInfo1') }}
-		</div>
+		<div class="circle-info" v-html="$t('lang.traditionInfo1')"></div>
 		<div class="circle">
 			<img src="../../assets/image/cultural5.png" alt="" />
 		</div>
-		<div class="circle-info">
-			{{ $t('lang.traditionInfo2') }}
-		</div>
+		<div class="circle-info" v-html="$t('lang.traditionInfo2')"></div>
 		<div class="circle">
 			<img src="../../assets/image/cultural6.png" alt="" />
 		</div>
-		<div class="circle-info">
-			{{ $t('lang.traditionInfo3') }}
-		</div>
+		<div class="circle-info" v-html="$t('lang.traditionInfo3')"></div>
 
 		<div class="footer-nav">
 			<div class="look-more" @click="lookMore"></div>
@@ -158,12 +144,12 @@ export default {
 			}
 		}
 		.info {
-			height: 90px;
 			padding: 15px;
+			//width: calc(100% - 20px);
+			//margin-left: 10px;
 			.content {
-				height: 24px;
-				line-height: 24px;
 				font-size: 32px;
+				line-height: 24px;
 				font-weight: 400;
 				color: #707070;
 				padding-top: 10px;
@@ -172,10 +158,21 @@ export default {
 				white-space: nowrap;
 			}
 			.time {
-				font-size: 32px;
+				font-size: 28px;
 				font-weight: 400;
 				color: #707070;
-				padding-top: 13px;
+				margin-top: 15px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.tel {
+				font-size: 28px;
+				font-weight: 400;
+				color: #707070;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 		}
 	}
@@ -210,7 +207,7 @@ export default {
 		.look-more {
 			width: 424px;
 			height: 78px;
-			background: url('../../assets/image/title-lookmore.png') no-repeat;
+			background: url('../../assets/image/title-lookmore-white.png') no-repeat;
 			background-size: 100% 100%;
 			margin: 0 auto;
 		}

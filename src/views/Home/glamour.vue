@@ -6,9 +6,7 @@
 		<div class="title-nav">
 			<img src="../../assets/image/title-jingqugaikuang.png" alt="" />
 		</div>
-		<div class="glamour-info">
-			{{ $t('lang.glamour') }}
-		</div>
+		<div class="glamour-info" v-html="$t('lang.glamour')"></div>
 		<div class="glamour-foot">
 			<img src="../../assets/image/glamary2.png" alt="" />
 		</div>
