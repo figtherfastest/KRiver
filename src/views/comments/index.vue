@@ -51,7 +51,13 @@
 			</div>
 		</van-form>
 		<van-popup v-model="showPicker" position="bottom">
-			<van-picker show-toolbar :columns="pickColumn" @confirm="onPickConfirm" @cancel="showPicker = false" />
+			<van-picker
+				show-toolbar
+				:item-height="30"
+				:columns="pickColumn"
+				@confirm="onPickConfirm"
+				@cancel="showPicker = false"
+			/>
 		</van-popup>
 	</div>
 </template>
