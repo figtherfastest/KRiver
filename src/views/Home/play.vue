@@ -1,13 +1,10 @@
 <template>
 	<div class="play">
-		<nav-title title="游玩指南" />
 		<div class="play-info">
 			<img class="play-left" src="../../assets/image/play11.png" alt="" />
 			<div class="play-right">
 				<img src="../../assets/image/play10.png" alt="" />
-				<div class="right-info">
-					景区当地传统美食风味独特，有着浓重的乡土味，令人魂牵梦萦。酸辣鸡，无论家宴还是酒店，无论是逢年过节还是招待贵客，都是必备的一道主菜；羊肉格格麻辣鲜香，细嫩爽滑，十分别致；开江面，以老咸菜切成碎颗，炒鸡蛋作臊子，做成的面食，极具故乡风味；沙坝场乡刘老头白酒，入口绵软，醇厚芬芳；宝石湖人放天养的生态鱼，肉质鲜嫩细滑；任市唐板鸭和杨板鸭，精选本地放养土麻鸭，在传统制作工艺基础上，辅以多种滋补食材，经十余道工序精心烤制而成，板鸭皮亮肉润、香气浓郁，色香味具佳；竹溪豆干采用秘制红糖炒制金酱和秘制卤香大料卤出，味道独特；开江特产豆笋，以黄豆为原料经十几道工序提炼而成。
-				</div>
+				<div class="right-info-title" v-html="$t('lang.playInfo')"></div>
 			</div>
 		</div>
 		<div class="title-nav">
@@ -50,8 +47,9 @@
 						<img src="../../assets/image/play9.png" alt="" />
 					</div>
 					<div class="info">
-						<div class="content">content</div>
-						<div class="time">2020-12-02</div>
+						<div class="content">开江宜美家中天假日酒店</div>
+						<div class="time">开江新宁镇新宁路343号</div>
+						<div class="tel">联系电话：0818-8137777</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
@@ -59,8 +57,9 @@
 						<img src="../../assets/image/play9.png" alt="" />
 					</div>
 					<div class="info">
-						<div class="content">content</div>
-						<div class="time">2020-12-02</div>
+						<div class="content">开江好客连锁酒店</div>
+						<div class="time">开江新宁镇宝石大道130号</div>
+						<div class="tel">联系电话：0818-5283666</div>
 					</div>
 				</van-swipe-item>
 				<van-swipe-item>
@@ -68,8 +67,9 @@
 						<img src="../../assets/image/play9.png" alt="" />
 					</div>
 					<div class="info">
-						<div class="content">content</div>
-						<div class="time">2020-12-02</div>
+						<div class="content">鸿景大酒店</div>
+						<div class="time">开江新宁镇新宁路304号</div>
+						<div class="tel">联系电话：0818-8222133</div>
 					</div>
 				</van-swipe-item>
 			</van-swipe>
@@ -79,18 +79,27 @@
 		</div>
 		<div class="basic-info">
 			<img src="../../assets/image/play-yazi.png" class="left-info" align="left" />
-			开江自古以来就有养殖麻鸭、白鹅的习惯。
-			开江麻鸭，全国农产品地理标志。开江麻鸭产蛋性能好、屠宰率高。宰杀后，肌肉丰满紧密、有坚实感、光泽润滑，用手触摸湿润不粘手、肌纤维韧性强、弹性好。因鸭肉的
-			脂肪含量少、氨基酸种类多，营养丰富，咀嚼道鲜美。肉汤清淡，风味独特、鲜美无比、营养丰富、可口怡人。开江白鹅是全国有名的优良地方水禽品种，具有个大（3—4公斤）、毛质好（通体纯白）、产毛量高（每只鹅产羽毛100—200克）、肉质嫩、产蛋率高、生长快（2—3个月可出栏，年可养殖3—4批）的鲜明特点，是食品和服装加工的优质原料。开江县白鹅常年饲养量在450万只以上。
+			{{ $t('lang.playConsel1') }}
 		</div>
 		<div class="basic-info">
 			<img src="../../assets/image/play-ganlan.png" class="right-info" align="right" />
-			1974年，达州市在开江县、达县（现达川区）引种栽培油橄榄，开江县油橄榄种植已遍布全县20个乡镇。达州市属亚热带湿润季风气候类型，适宜的地理气候条件，有益于油橄榄的干物质积累，为达州橄榄油的生产提供了
-			充足的优质原料。达州橄榄油鲜果冷榨而成，色泽黄绿、清澈透明，品质优于国家及欧盟标准。对人体心血管疾病预防、抗衰老、降血压、减肥、帮助消化、护肤等方面有着十分明显的作用。达州橄榄油曾先后荣获国家“绿色食品”、“四川名牌”、“四川著名商标”、“西博会金质奖”、“重庆市最受消费者欢迎奖”等荣誉称号。2010年09月03日，原国家质检总局批准对“达州橄榄油”实施地理标志产品保护。
+			{{ $t('lang.playConsel1') }}
 		</div>
 		<div class="look-more">
-			<div class="more"></div>
+			<div class="more" @click="lookMore"></div>
 		</div>
+		<action-sheet
+			actionTitle="特色土产"
+			v-model="actionState"
+			v-if="actionState"
+			@handlePrev="handlePrev"
+			@handleNext="handleNext"
+		>
+			<template>
+				<img :src="sheetContent.image" class="sheet-img" />
+				<div class="shet-action-content">{{ sheetContent.info }}</div>
+			</template>
+		</action-sheet>
 	</div>
 </template>
 
@@ -98,8 +107,75 @@
 export default {
 	name: 'play',
 	components: {
-		navTitle: () => import('../../components/nav-title'),
-		footerNav: () => import('../../components/footer-nav')
+		footerNav: () => import('../../components/footer-nav'),
+		actionSheet: () => import('../../components/action-shet')
+	},
+	data() {
+		return {
+			actionState: false,
+			currentIndex: 0,
+			sheetContent: {},
+			sheetAction: [
+				{
+					image: require('../../assets/image/play17.png'),
+					info:
+						'开江盛产葛根，葛根具有生津止渴、解肌退热的功效。葛根是药食同源的植物，含有多种营养成分和人体所必需的矿物质，有“干年人参”的美誉。开江人利用葛根制作出葛根粉、葛根面、葛根酒等系列产品。葛根粉，也称粉葛。既有药用价值，又有营养保健之功效，是老少皆宜的名贵滋补品。葛根酒是通过采用现代工艺，传统酿造方法将葛根直接生蒸而成。酒内含大量异黄酮及营养物质，无任何添加剂，为原汁原味的天然营养葛根酒饮品。葛根酒对心脏病，尤其是冠心病、骨质疏松症和老年性痴呆等都有预防作用。葛根面，是在面粉里合理的添加葛根粉，加工成的挂面。葛根面是萃取高山天然葛根精华，选用特质面条专用小麦粉以及优质野葛根粉为主要原料，面条口感细腻爽滑，具有极高的营养保健价值，实属面中精品。'
+				},
+				{
+					image: require('../../assets/image/gegeng.png'),
+					info:
+						'开江的特色豆笋又名豆筋，以黄豆为原料经过十几道工序提炼而成，营养十分丰富，食用方式也是多种多样，口感嫩滑、味道醇香。2009年5月，开江豆笋被四川省人民政府列为第三批非物质文化遗产保护项目。豆笋含有高量的蛋白质，营养极其丰富，长期食用有利于小孩的生长发育，可延缓人体的衰老，深受人们的喜爱。开江豆笋因其传统、独特的制作技艺而深受开江人的喜爱。开江豆笋可称得上是真正意义上的绿色食品，其技艺独特，全程手工操作，选料精细，制作流程别具一格，具有极强的综合制作技艺价值。'
+				},
+				{
+					image: require('../../assets/image/banya.png'),
+					info:
+						'开江县腌腊制品历史悠久，品种繁多，在省内外享有盛誉。开江板鸭选用该县出产的开江麻鸭为原料，腊香浓郁，色泽金黄，肥而不腻，清香味爽，独具特色。<br/>' +
+						'<br/>' +
+						'在开江境内，任市镇的板鸭也同样出名。任市板鸭已有100年的历史，其制作技艺融入了开江人民的智慧。制品含有丰富的氨基酸和多种维生素，而且胆固醇含量低，营养价值极高，具有滋阴功效。 2008年9月，开江任市唐板鸭传统制作技艺被达州市人民政府公布为第二批市级非物质遗产保护名录。2014年，开江县家禽产业协会申报的“任市板鸭”通过农业部农产品质量安全中心审查和组织专家评审，实施国家农产品地理标志登记保护。'
+				},
+				{
+					image: require('../../assets/image/ganlanyou.png'),
+					info:
+						'达州橄榄油是由采摘的油橄榄树鲜果直接冷榨而成的，不经过加热和化学处理，保留了橄榄天然的营养成分。橄榄油被认为是迄今为止所发现的油脂中最适合人体营养的油脂，在西方被誉为“液体黄金”、“植物油皇后”。开江县重视油橄榄种植，通过多年的努力，油橄榄的品种资源得到了有效的保护。目前，开江县是中国现存品种最多、品质最好的油橄榄品种资源库。2011年，通过国家权威粮油标准化委员会专家考察认定，“中国油橄榄之乡”落户开江。'
+				},
+				{
+					image: require('../../assets/image/baier.png'),
+					info:
+						'开江自古以来就有养殖白鹅的习惯。开江白鹅是全国有名的优良地方水禽品种，具有个儿大、毛质好、产毛量高、肉质嫩、产蛋率高、生长快的鲜明特点，是食品和服装加工的优质原料。开江县白鹅常年饲养量在450万只以上，目前，开江多个乡镇均建有优质白鹅养殖基地，可年出栏白鹅500万只、鸭800万只。如今，开江白鹅已成为农产品地理标志产品。'
+				},
+				{
+					image: require('../../assets/image/zhugengjiang.png'),
+					info:
+						'开江长岭土包寨村广泛种植着竹根姜，在这里种植竹根姜有着悠久的历史。土包寨的土质半泥半沙，既能渗水，又能保水，十分适合种植竹根姜。长岭竹根姜鲜嫩、无茎，脆生且长如竹节。因此有人云：“长岭山清水秀，土地肥沃，造化了又白又嫩又苗条的美女和竹根姜”。'
+				},
+				{
+					image: require('../../assets/image/sancangzi.png'),
+					info:
+						'山苍子，是中国特有的香料植物资源之一，具有温肾健胃，行气散结的功效，可以用于治疗胃痛呕吐及无名肿毒等症。中国山苍子油年产量达2000余吨，为世界上最大的生产国和出口国，产品远销美、日、英、法、德、瑞士、荷兰等国，享誉国内外。山苍子在四川境内其他地方鲜为少见，是开江长岭镇独有的特色产品。其果实清香、纯正、风味独特。山苍子富含硒、锌等多种微量元素，既满足了现代人追求多品味的要求，又对人体健康大有裨益。山苍子可鲜吃，也可加工成山苍子油。山苍子油浅黄微透明，芳香无比，保质期长，具有天然的防腐作用，有“天下第一植物油”之称。'
+				}
+			]
+		}
+	},
+	methods: {
+		handlePrev() {
+			this.currentIndex -= 1
+			if (this.currentIndex < 0) {
+				this.currentIndex = 0
+			}
+			this.sheetContent = this.sheetAction[this.currentIndex]
+		},
+		handleNext() {
+			this.currentIndex += 1
+			if (this.currentIndex >= 7) {
+				this.currentIndex = 0
+			}
+			this.sheetContent = this.sheetAction[this.currentIndex]
+		},
+		lookMore() {
+			this.actionState = true
+			this.currentIndex = 0
+			this.sheetContent = this.sheetAction[this.currentIndex]
+		}
 	}
 }
 </script>
@@ -125,13 +201,13 @@ export default {
 		}
 		.play-right {
 			width: calc(100% - 210px);
-			.right-info {
+			.right-info-title {
 				padding-top: 15px;
 				font-size: 24px;
 				font-family: 微软简楷体;
 				font-weight: 400;
 				line-height: 40px;
-				text-indent: 15px;
+				text-indent: 20px;
 				color: #ffffff;
 			}
 		}
@@ -168,7 +244,11 @@ export default {
 		margin-top: 30px;
 		overflow: hidden;
 		.img {
+			//width: calc(100% - 20px);
+			//margin-left: 10px;
+			padding: 0 15px;
 			height: 250px;
+			border-radius: 8px 8px 0 0;
 			img {
 				width: 100%;
 				height: 100%;
@@ -176,12 +256,12 @@ export default {
 			}
 		}
 		.info {
-			height: 90px;
 			padding: 15px;
+			//width: calc(100% - 20px);
+			//margin-left: 10px;
 			.content {
-				height: 24px;
-				line-height: 24px;
 				font-size: 32px;
+				line-height: 24px;
 				font-weight: 400;
 				color: #707070;
 				padding-top: 10px;
@@ -190,10 +270,15 @@ export default {
 				white-space: nowrap;
 			}
 			.time {
-				font-size: 32px;
+				font-size: 28px;
 				font-weight: 400;
 				color: #707070;
-				padding-top: 13px;
+				margin-top: 15px;
+			}
+			.tel {
+				font-size: 28px;
+				font-weight: 400;
+				color: #707070;
 			}
 		}
 	}
@@ -227,6 +312,18 @@ export default {
 			margin: 0 auto;
 			background: url('../../assets/image/title-lookmore.png');
 		}
+	}
+	.sheet-img {
+		width: 100%;
+		object-fit: cover;
+	}
+	.shet-action-content {
+		font-size: 28px;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+		line-height: 48px;
+		color: #333333;
+		text-indent: 20px;
 	}
 }
 </style>

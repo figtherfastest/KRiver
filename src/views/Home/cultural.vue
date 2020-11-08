@@ -1,6 +1,6 @@
 <template>
 	<div class="cultural">
-		<nav-title title="传统文化" />
+		<!--		<nav-title title="传统文化" />-->
 		<div class="nav-img">
 			<img src="../../assets/image/cultural1.png" alt="" />
 		</div>
@@ -81,9 +81,6 @@
 <script>
 export default {
 	name: 'cultural',
-	components: {
-		navTitle: () => import('../../components/nav-title')
-	},
 	methods: {
 		lookMore() {
 			this.$router.push({ name: 'moreCultural' })

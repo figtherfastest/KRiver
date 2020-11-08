@@ -2,7 +2,7 @@
 	<div class="home">
 		<div class="home-img">
 			<img src="../../assets/image/index-avatar.png" alt="" />
-			<van-notice-bar class="notic" left-icon="volume-o" color="#C0A85A" background="none" :text="noticText" />
+			<van-notice-bar class="notic" left-icon="volume-o" color="#BA2525" background="none" :text="noticText" />
 		</div>
 		<div class="tab-wrap">
 			<div class="tab" @click="goGalary">
@@ -28,7 +28,7 @@
 			<img src="../../assets/image/news.png" alt="" />
 		</div>
 		<div class="ope-swipe">
-			<van-swipe class="my-swipe" :autoplay="3000000" indicator-color="white">
+			<van-swipe class="my-swipe" :autoplay="3000000" indicator-color="white" :width="350">
 				<van-swipe-item>
 					<div class="img">
 						<img src="../../assets/image/taohua.png" alt="" />
@@ -80,10 +80,20 @@
 		<div class="title-nav">
 			<img src="../../assets/image/title-chuxingjingnang.png" alt="" />
 		</div>
-		<sige></sige>
+		<sige @hanndleSige="hanndleSige"></sige>
 		<div class="ink2-img">
 			<img src="../../assets/image/home3.png" alt="" />
 		</div>
+		<action-sheet
+			v-model="actionSheetState"
+			v-if="actionSheetState"
+			:prevState="false"
+			nextText="关闭"
+			:actionTitle="actionSheetTitle"
+			@handlePrev="handlePrev"
+		>
+			<div class="index-sheet-content" v-html="actionContent"></div>
+		</action-sheet>
 	</div>
 </template>
 
@@ -92,14 +102,18 @@ export default {
 	name: 'Home',
 	data() {
 		return {
-			noticText: ''
+			noticText: '',
+			actionSheetState: false,
+			actionSheetTitle: '',
+			actionContent: ''
 		}
 	},
 	created() {
 		this.getNotic()
 	},
 	components: {
-		sige: () => import('../../components/sige')
+		sige: () => import('../../components/sige'),
+		actionSheet: () => import('../../components/action-shet')
 	},
 	methods: {
 		getNotic() {
@@ -124,8 +138,26 @@ export default {
 		},
 		go720() {
 			window.location.href = 'https://360.at720.com/200710/?sid=m200710_0830&from=singlemessage'
+		},
+		hanndleSige(val) {
+			this.actionSheetState = true
+			if (val === 'piaowu') {
+				this.actionSheetTitle = '票务信息'
+				this.actionContent = this.$t('lang.piaowuxinxi')
+			} else if (val === 'rexian') {
+				this.actionSheetTitle = '热线电话'
+				this.actionContent = this.$t('lang.rexiandianhua')
+			} else if (val === 'jiaotong') {
+				this.actionSheetTitle = '交通攻略'
+				this.actionContent = this.$t('lang.jiaotonggonglue')
+			} else if (val === 'luyou') {
+				this.actionSheetTitle = '旅游攻略'
+				this.actionContent = this.$t('lang.luyougongluo')
+			}
+		},
+		handlePrev() {
+			this.actionSheetState = false
 		}
-		//
 	}
 }
 </script>
@@ -134,6 +166,10 @@ export default {
 	width: 100%;
 	height: 100%;
 	overflow: auto;
+	.van-notice-bar {
+		background: rgba(255, 255, 255, 0.6) !important;
+		border-radius: 20px;
+	}
 	.home-img {
 		height: 438px;
 		display: flex;
@@ -277,6 +313,27 @@ export default {
 		margin: 50px 20px 0 20px;
 		height: 400px;
 		background: red;
+	}
+	.van-action-sheet__header {
+		height: 90px;
+		font-size: 32px;
+		font-family: Segoe UI;
+		font-weight: 600;
+		line-height: 90px;
+		color: #323233;
+		border-bottom: 1px solid #9c9a9a;
+	}
+	.index-sheet-content {
+		font-size: 28px;
+		font-family: 微软简楷体;
+		font-weight: 400;
+		line-height: 50px;
+		color: #333333;
+		max-height: 800px;
+		overflow: auto;
+	}
+	.van-notice-bar {
+		color: red;
 	}
 }
 </style>

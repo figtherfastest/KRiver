@@ -1,7 +1,7 @@
 <template>
 	<div class="nav-title">
 		{{ title }}
-		<i class="iconfont iconzuojiantou" v-show="showNav" @click="goBack"></i>
+		<!--		<i class="iconfont iconzuojiantou" v-show="showNav" @click="goBack"></i>-->
 	</div>
 </template>
 

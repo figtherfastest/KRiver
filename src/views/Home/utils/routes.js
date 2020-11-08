@@ -7,45 +7,52 @@ const homeRoutes = [
 			{
 				path: '/',
 				name: 'indexHome',
-				component: () => import('../index')
+				component: () => import('../index'),
+				meta: { title: '开江官网' }
 			}
 		]
 	},
 	{
 		path: '/glamour',
 		name: 'glamour',
-		component: () => import('../glamour')
+		component: () => import('../glamour'),
+		meta: { title: '魅力开江' }
 	},
 	{
 		path: '/cultural',
 		name: 'cultural',
-		component: () => import('../cultural')
+		component: () => import('../cultural'),
+		meta: { title: '传统文化' }
 	},
 	{
 		path: '/play',
 		name: 'play',
-		component: () => import('../play')
+		component: () => import('../play'),
+		meta: { title: '游玩指南' }
 	},
 	{
 		path: '/senery',
 		name: 'senery',
-		component: () => import('../senery')
+		component: () => import('../senery'),
+		meta: { title: '景区政务' }
 	},
 	{
 		path: '/traval',
 		name: 'traval',
-		component: () => import('../traval')
+		component: () => import('../traval'),
+		meta: { title: '出行锦囊 ' }
 	},
 	{
 		path: '/more/glamour',
 		name: 'moreGlamour',
-		component: () => import('../more-glamour')
+		component: () => import('../more-glamour'),
+		meta: { title: '魅力金山' }
 	},
 	{
 		path: '/more/cultural',
 		name: 'moreCultural',
-		component: () => import('../more-cultural')
+		component: () => import('../more-cultural'),
+		meta: { title: '传统文化' }
 	}
-	//	senery traval
 ]
 export default homeRoutes

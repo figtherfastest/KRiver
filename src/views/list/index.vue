@@ -2,8 +2,8 @@
 	<div class="home">
 		<div class="title">列表</div>
 		<div class="lang">
-			<span :class="{ active: active === 0 }" @click="changeen">中</span>/
-			<span :class="{ active: active === 1 }" @click="changezh">EN</span>
+			<span :class="{ active: active === 0 }" @click="changezh">中</span>/
+			<span :class="{ active: active === 1 }" @click="changeen">EN</span>
 		</div>
 		<div class="list" @click="goGalary">魅力金山</div>
 		<div class="list" @click="goCultural">传统文化</div>
@@ -20,6 +20,18 @@ export default {
 	data() {
 		return {
 			active: 0
+		}
+	},
+	created() {
+		const localLang = JSON.parse(localStorage.getItem('langState'))
+		if (Object.keys(localLang).length > 0) {
+			this.lang = localLang.lang
+			this.$i18n.locale = localLang.in8nLang
+			this.active = localLang.active
+		} else {
+			this.lang = '中文'
+			this.$i18n.locale = 'zh'
+			this.active = 0
 		}
 	},
 	methods: {
@@ -44,12 +56,14 @@ export default {
 		changezh() {
 			this.lang = '中文'
 			this.$i18n.locale = 'zh'
-			this.active = 1
+			this.active = 0
+			localStorage.setItem('langState', JSON.stringify({ lang: '中文', in8nLang: 'zh', active: 0 }))
 		},
 		changeen() {
 			this.lang = 'english'
 			this.$i18n.locale = 'en'
-			this.active = 0
+			this.active = 1
+			localStorage.setItem('langState', JSON.stringify({ lang: 'english', in8nLang: 'en', active: 1 }))
 		}
 	}
 }

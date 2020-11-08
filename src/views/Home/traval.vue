@@ -1,6 +1,5 @@
 <template>
 	<div class="traval">
-		<nav-title title="出行锦囊" />
 		<div class="nav-img">
 			<img src="../../assets/image/traval2.png" alt="" />
 		</div>
@@ -8,9 +7,11 @@
 			<img src="../../assets/image/xianlutuijian.png" alt="" />
 		</div>
 		<div class="info-do">
-			<div class="do-list">由省道202梁平到开江两日游</div>
-			<div class="do-list">由省道202梁平到开江两日游</div>
-			<div class="do-list">由省道202梁平到开江两日游</div>
+			<div class="do-list">{{ $t('lang.travalState1') }}</div>
+			<div class="do-list">{{ $t('lang.travalState2') }}</div>
+			<div class="do-list">{{ $t('lang.travalState3') }}</div>
+			<div class="do-list">{{ $t('lang.travalState4') }}</div>
+			<div class="do-list">{{ $t('lang.travalState5') }}</div>
 		</div>
 		<div class="title-nav">
 			<img src="../../assets/image/title-jiaotonggonglve.png" alt="" />
@@ -23,32 +24,19 @@
 			<div class="state-title">
 				<img src="../../assets/image/heng-zijiachuxing.png" alt="" />
 			</div>
-			<div class="state">
-				路线一：成都→遂宁→南充→广安→邻水→达州→开江 （成都→成南高速→南广高速→广邻高速→邻垫高速
-				→达渝高速→开江）<br />
-				路线二：重庆→渝邻高速→达渝高速→达州→开江 （途经亭子、大风、麻柳、檀木、普安到开江县城）
-			</div>
+			<div class="state" v-html="$t('lang.travalZijia')"></div>
 		</div>
 		<div class="traval-state">
 			<div class="state-title">
 				<img src="../../assets/image/heng-gonggongjiaotongchuxing.png" alt="" />
 			</div>
-			<div class="state">
-				路线一：成都乘动车至达州，达州西客站乘大巴至开江 <br />
-				路线二：成都乘动车至达州，达州火车站乘火车至开江任市镇<br />
-				路线三：重庆长途汽车站乘大巴直达开江 <br />
-				路线四：重庆乘动车至达州，达州西客站乘大巴至开江
-			</div>
+			<div class="state" v-html="$t('lang.travalGonggjiaot')"></div>
 		</div>
 		<div class="traval-state">
 			<div class="state-title">
 				<img src="../../assets/image/heng-chuxingtishi.png" alt="" />
 			</div>
-			<div class="state">
-				1.成都至达州动车，一天约25车次，最早出发时间8点09分，用 时约2.5小时。 <br />
-				2.达州西客站至开江大巴，约1小时，票价31元。 <br />
-				3.重庆至开江大巴，约3个半小时，票价97元。
-			</div>
+			<div class="state" v-html="$t('lang.travalChuxinmgtishi')"></div>
 		</div>
 		<div class="ope-food">
 			<footer-nav></footer-nav>
@@ -56,19 +44,59 @@
 		<div class="title-nav">
 			<img src="../../assets/image/title-chuxingfuwu.png" alt="" />
 		</div>
-		<sige />
+		<sige :jiaotong="jiaotong" :luyou="luyou" @hanndleSige="hanndleSige" />
 		<div class="foot-img"></div>
-		<!--		<footer-nav></footer-nav>-->
+		<action-sheet
+			:prevState="false"
+			nextText="关闭"
+			:actionTitle="actionTitle"
+			v-if="actionState"
+			@handleNext="handleNext"
+		>
+			<div class="index-sheet-content" v-html="actionContent"></div>
+		</action-sheet>
 	</div>
 </template>
 
 <script>
 export default {
 	name: 'tirval',
+	data() {
+		return {
+			actionState: false,
+			actionTitle: '',
+			actionContent: '',
+			jiaotong: require('../../assets/image/luyougongluo.png'),
+			luyou: require('../../assets/image/wenxingtishi.png')
+		}
+	},
 	components: {
-		navTitle: () => import('../../components/nav-title'),
+		actionSheet: () => import('../../components/action-shet'),
 		footerNav: () => import('../../components/footer-nav'),
 		sige: () => import('../../components/sige')
+	},
+	methods: {
+		handleNext() {
+			this.actionState = false
+		},
+		hanndleSige(val) {
+			if (val === 'piaowu') {
+				this.actionTitle = '票务信息'
+				this.actionContent = this.$t('lang.piaowuxinxi')
+			} else if (val === 'rexian') {
+				this.actionTitle = '热线电话'
+				this.actionContent = this.$t('lang.rexiandianhua')
+			} else if (val === 'jiaotong') {
+				this.actionTitle = '景区服务点'
+				this.actionContent = ''
+				return false
+			} else if (val === 'luyou') {
+				this.actionTitle = '温馨提示'
+				this.actionContent = ''
+				return false
+			}
+			this.actionState = true
+		}
 	}
 }
 </script>
@@ -102,9 +130,8 @@ export default {
 		margin-left: 36px;
 		margin-top: 30px;
 		.do-list {
-			height: 82px;
-			line-height: 82px;
-			padding-left: 30px;
+			padding: 10px 30px;
+			line-height: 50px;
 			margin-bottom: 25px;
 			font-size: 28px;
 			font-family: 微软简楷体;
@@ -156,6 +183,15 @@ export default {
 		background: url('../../assets/image/traval3.png') no-repeat;
 		background-size: 100% 100%;
 		margin-top: -100px;
+	}
+	.index-sheet-content {
+		font-size: 28px;
+		font-family: 微软简楷体;
+		font-weight: 400;
+		line-height: 50px;
+		color: #333333;
+		max-height: 800px;
+		overflow: auto;
 	}
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
 	<div class="layout">
-		<div class="header">
-			<nav-title title="开江官网" :showNav="false" />
-		</div>
+		<!--		<div class="header">-->
+		<!--			<nav-title title="开江官网" :showNav="false" />-->
+		<!--		</div>-->
 		<div class="content">
 			<router-view />
 		</div>
@@ -19,10 +19,9 @@
 <script>
 export default {
 	name: 'layout',
-
-	components: {
-		navTitle: () => import('../components/nav-title')
-	},
+	// components: {
+	// 	navTitle: () => import('../components/nav-title')
+	// },
 	data() {
 		return {
 			active: 1
@@ -35,22 +34,9 @@ export default {
 .layout {
 	width: 100%;
 	height: 100%;
-	.header {
-		height: 120px;
-		.van-nav-bar {
-			height: 120px;
-			.van-nav-bar__arrow {
-				font-size: 40px;
-			}
-			.van-nav-bar__title {
-				font-size: 40px;
-				color: #707070;
-			}
-		}
-	}
 	.content {
 		width: 100%;
-		height: calc(100% - 200px);
+		height: calc(100% - 80px);
 	}
 	.footer {
 		position: absolute;
